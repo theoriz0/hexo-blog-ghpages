@@ -20,6 +20,66 @@ title: 读余果的博客，做笔记
 
 [原文链接](https://yuguo.us/weblog/15-best-javascript-practice/)
 
+> 优化循环：
+>
+> 循环遍历一个数组
+>
+> ```javascript
+> //这段糟糕的代码会在每次进入循环的时候都计算一次数组的长度
+> 
+> var names = ['George','Ringo','Paul','John'];
+> 
+> for(var i=0;i<names.length;i++){
+> 
+>   doSomeThingWith(names[i]);
+> 
+> }
+> //这样的话，就只会计算一次了
+> 
+> var names = ['George','Ringo','Paul','John'];
+> 
+> var all = names.length;
+> 
+> for(var i=0;i<all;i++){
+> 
+>   doSomeThingWith(names[i]);
+> 
+> }
+> //这样就更加简短了
+> 
+> var names = ['George','Ringo','Paul','John'];
+> 
+> for(var i=0,j=names.length;i<j;i++){
+> 
+>   doSomeThingWith(names[i]);
+> 
+> }
+> //这段代码的糟糕之处在于，它把变量声明放在循环体内了，每次循环都会创建变量
+> 
+> for(var i = 0; i < someArray.length; i++) {
+> 
+>    var container = document.getElementById('container');
+> 
+>    container.innerHtml += 'my number: ' + i;
+> 
+>    console.log(i);
+> 
+> }
+> //在循环体外声明变量，变量只会创建一次
+> 
+> var container = document.getElementById('container');
+> 
+> for(var i = 0, len = someArray.length; i < len;  i++) {
+> 
+>    container.innerHtml += 'my number: ' + i;
+> 
+>    console.log(i);
+> 
+> }
+> ```
+
+> 为了避免混乱，我们建议在HTML中使用双引号，在JavaScript中使用单引号。
+
 ### Linux哲学
 
 [原文链接](https://yuguo.us/weblog/linux-philosophy/)

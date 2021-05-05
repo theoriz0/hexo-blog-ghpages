@@ -1,4 +1,10 @@
 # Ocean
+修改点：
+- 去除了相册
+- 去掉了首页视频
+- 信息替换为我的博客的信息
+
+## 原README.md
 
 Ocean is a mobile-enabled Hexo theme based on the features in Hexo's default theme landscape. Since I am a Designer and not a Coder, so please advise! I am very grateful to [youchen1992](https://github.com/youchen1992) for providing technical support during the Ocean production process.
 
